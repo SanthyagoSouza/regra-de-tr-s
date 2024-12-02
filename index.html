@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+
+        .input-container {
+            margin-bottom: 10px;
+        }
+
+        label {
+            margin-right: 5px;
+        }
+
+        input {
+            padding: 5px;
+            margin-right: 10px;
+            width: 100px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <table>
+            <tr>
+                <td><label for="">primeira Variavel</label></td>
+                <td><input id="x" type="number"></td>
+            </tr>
+            <tr>
+                <td><label for="">segunda Variavel</label></td>
+                <td><input id="y" type="number"></td>
+            </tr>
+            <tr>
+                <td><label for="">terceira variavel</label></td>
+                <td><input id="z" type="number"></td>
+            </tr>
+            <tr>
+                <td><label for="">Resultado:</label> </td>
+                <td>
+                    <P id="a">0,00</P>
+                </td>
+
+            </tr>
+            <tr>
+                <td><button onclick="calcular()" id="calcular">Calcular</button></td>
+            </tr>
+        </table>
+
+    </div>
+</body>
+
+<script>
+
+
+
+
+    function calcular() {
+        const x = parseFloat(document.querySelector("#x").value) || 0;
+        const y = parseFloat(document.querySelector("#y").value) || 0;
+        const z = parseFloat(document.querySelector("#z").value) || 0;
+        const resultado = ((z * y) / x).toFixed(2);
+        const a = document.querySelector("#a").textContent = ` ${resultado}`;
+
+    }
+
+
+
+    const botao = document.querySelector("#calcular")
+
+
+
+</script>
+
+</html>
